@@ -1,0 +1,89 @@
+/* Basic styles for the navbar */
+.nav-custom {
+  background: #1b262c;
+  padding: 5px 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo styles */
+.nav-logo {
+  width: 5vw;
+  margin-right: 15px; /* Add right margin for spacing */
+}
+
+/* Hamburger Icon */
+.icon {
+  display: none; /* Hidden by default, shown in media queries for mobile */
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Navigation Menu */
+.nav-custom ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation Links */
+.nav-custom ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-custom ul li a:hover {
+  background-color: #98e4ff;
+  color: #1b262c;
+}
+
+/* Hide checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .icon {
+    display: block; /* Show hamburger icon on mobile */
+  }
+
+  /* Hide menu by default */
+  .nav-custom ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #1b262c;
+    z-index: 1000;
+    padding: 10px 0;
+  }
+
+  /* Show menu when checkbox is checked */
+  #menu-toggle:checked ~ ul {
+    display: flex;
+  }
+
+  .nav-custom ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-custom ul li a {
+    font-size: 16px;
+    padding: 10px 0;
+    width: 100%;
+    display: block;
+  }
+}

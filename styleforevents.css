@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+:root{
+    --green: #98e4ff;
+}
+
+*::selection{
+    background-color: var(--green);
+    color: #fff;
+}
+
+
+.post{
+    padding: 4% 6%;
+    background-image: url('assets/bg2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 145vh;
+    padding-top: 0;
+    
+}
+
+@media (max-width: 1024px) {
+    .post{
+        height: 200vh;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .post{
+        height: 340vh;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .post{
+        height: 350vh;
+    }
+  }
+
+
+
+.btn{
+    height: 3rem;
+    width: 16rem;
+    background: none;
+    outline: none;
+    text-decoration: none;
+    border: .2rem solid var(--green);
+    color: var(--green);
+    font-size: 1rem;
+    margin: 1rem 0;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 0;
+    position: relative;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+}
+.btn::before,
+.btn::after{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--green);
+    z-index: -1;
+    transition: all .5s cubic-bezier(.37,1.14,.26,1.24);
+}
+.btn::before{
+    clip-path: polygon(0 0, 0 0, 0 0);
+}
+.btn:hover::before{
+    clip-path: polygon(0 0, 0 100%, 100% 0);
+}
+.btn::after{
+    clip-path: polygon(100% 100%, 100% 100%, 100% 100%);
+}
+.btn:hover::after{
+    clip-path: polygon(100% 0%, 0% 100%, 100% 100%);
+}
+.btn:hover{
+    color: #1B262C;
+}
+.heading{
+    text-align: center;
+    font-size: 4rem;
+    color: #555;
+    padding: 1rem;
+    padding-top: 5rem;
+    font-size: 1.3vw; 
+    background: linear-gradient(90deg, #ff6f61, #ffc371, #ff6f61, #ffc371); 
+    background-size: 300%; 
+    -webkit-background-clip: text; 
+    color: transparent; 
+    animation: gradientAnimation 6s infinite;
+}
+
+
+
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.post{
+    min-height: 80vh;
+}
+.post .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+   
+}
+.post .box-container .box{
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(11px);
+    box-shadow: 0 20px 50px rgba(58, 173, 255, 0.4);
+    margin: 2rem 1.5rem;
+    padding: 1rem;
+    border-radius: 10px;
+}
+.post .box-container .box img{
+    height: 20rem;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.post .box-container .box .content{
+    padding: 1rem;
+}
+.post .box-container .box .content span{
+    font-size: 1.5rem;
+    color: #98e4ff;
+}
+.post .box-container .box .content span i{
+    padding: 1rem 0;
+    color: #98e4ff;
+    margin-right: .5rem;
+}
+.post .box-container .box .content h3{
+    margin: .5rem;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+.post .box-container .box .content:hover h3{
+    color: #98e4ff;
+}
+
+.post .box-container .box .content p{
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+
+
