@@ -216,7 +216,9 @@ body, html {
   #eventSlogan{
     font-size: 0.9em;
   }
-
+ .video-container{
+  margin-top: 10%;
+ }
 }
 
 
